@@ -35,7 +35,7 @@ To identify and analyze failed SSH login attempts using Linux authentication log
 ## Background
 Linux systems record authentication activity in log files such as:
 
-- `/var/log/auth.log` (Debian/Ubuntu)
+- `/var/log/auth.log` (Ubuntu)
 
 This log contains:
 - SSH login attempts
@@ -75,13 +75,12 @@ cat /var/log/auth.log
 ### 3. Filter Failed Login Attempts
 Used grep to filter failed SSH logins:
 
-cat /var/log/auth.log | grep "Failed password"
+cat /var/log/auth.log | grep "failure"
 
 ### 4. Review Relevant Entries
 Analyzed the following information:
 
 - Username attempted
-- Source IP address
 - Timestamp
 - Frequency of attempts
 
@@ -89,16 +88,11 @@ Analyzed the following information:
 Looked for:
 
 - repeated login attempts
-- same IP address
 - multiple usernames targeted
 
-### Sample Findings
-- Example Log Entry
-"Failed password for invalid user admin from 192.168.1.10 port 22 ssh2"
 
 Observations
 - Multiple failed login attempts were detected
-- The same IP address attempted access repeatedly
 - Different usernames were targeted
 - Attempts occurred within a short time frame
 
@@ -162,7 +156,7 @@ This project can be extended by:
 
 ### Screenshots
 auth-log.jpg
-failed-login.jpg
+
 
 ### Repository Structure
 linux-auth-log-analysis/
@@ -170,7 +164,7 @@ linux-auth-log-analysis/
 ├── README.md
 └── images/
 ├── auth-log.jpg
-└── failed-logins.jpg
+
 
 ### Final Notes
 This project demonstrates a foundational cybersecurity skill: analyzing authentication logs to detect potential threats.

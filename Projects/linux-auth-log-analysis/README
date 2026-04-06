@@ -1,1 +1,74 @@
+# Linux Authentication Log Analysis
 
+## Overview
+This project demonstrates a basic cybersecurity investigation using Linux authentication logs to identify failed SSH login attempts.
+
+The goal is to analyze system logs, detect unauthorized access attempts, and understand how login failures are recorded in a Linux environment.
+
+This is a beginner-friendly blue team project focused on log analysis and security monitoring.
+
+---
+
+## Objective
+To identify and analyze failed SSH login attempts using Linux authentication logs and determine whether the activity is normal or potentially malicious.
+
+---
+
+## Skills Demonstrated
+- Linux command line usage
+- Log analysis using terminal
+- Basic threat detection
+- Understanding SSH authentication logs
+- Pattern recognition (brute-force attempts)
+- Incident documentation
+
+---
+
+## Tools Used
+- Linux (Ubuntu)
+- Terminal
+- `/var/log/auth.log`
+- `cat`, `grep`, `less`
+
+---
+
+## Background
+Linux systems record authentication activity in log files such as:
+
+- `/var/log/auth.log` (Debian/Ubuntu)
+
+This log contains:
+- SSH login attempts
+- sudo activity
+- authentication failures
+
+A common indicator of suspicious activity is:
+
+- **"Failed password"** entries
+
+These may indicate:
+- incorrect login attempts
+- brute-force attacks
+- unauthorized access attempts
+
+---
+
+## Lab Setup
+
+### Environment
+- OS: Ubuntu Linux (VM)
+- Log file: `/var/log/auth.log`
+- Access method: Terminal
+
+---
+
+## Steps Performed
+
+### 1. Access the Terminal
+Opened the Linux terminal in the virtual machine.
+
+### 2. View Authentication Logs
+Used the following command:
+
+```bash
+cat /var/log/auth.log

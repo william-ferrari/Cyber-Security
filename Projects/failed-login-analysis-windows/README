@@ -192,17 +192,23 @@ My next step is to expand this investigation by:
 ---
 
 ## Screenshots
-Add screenshots here if available:
 - Event Viewer main screen
 - Filtered Event ID 4625 results
 - Event details panel
 
-Example:
-
-![Event Viewer Security Log](images/eventviewer-security-log.png)
-
-![Filtered Event 4625](images/event-4625.png)
 
 ---
 
 ## Repository Structure
+failed-login-analysis-windows/
+│
+├── README.md
+└── images/
+├── event-viewer-logs.lpg
+└── event-4625.jpg
+
+
+## Final Notes
+This is a beginner-friendly cybersecurity project designed to demonstrate practical interest in blue team operations, Windows log analysis, and security monitoring.
+
+It is simple, but it reflects the type of foundational investigation that is relevant for junior SOC and entry-level cybersecurity roles.

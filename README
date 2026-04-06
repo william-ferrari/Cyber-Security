@@ -38,3 +38,50 @@ The goal of this portfolio is to demonstrate hands-on experience, continuous lea
 - Virtual Machines (VirtualBox / VMware)
 
 ---
+
+## Repository Structure
+cyber-security/
+│
+├── projects/
+│ ├── failed-login-analysis-windows/
+│ ├── linux-auth-log-analysis/
+│
+└── README.md
+
+## Projects
+
+### 1. Failed Login Analysis (Windows)
+- Investigated Windows Security logs (Event ID 4625)
+- Identified failed authentication attempts
+
+---
+
+## Learning Platforms
+- TryHackMe
+- Online courses and self-study
+- Hands-on lab environments
+
+---
+
+## Current Focus
+- Strengthening networking and system fundamentals
+- Practicing log analysis and incident investigation
+- Building a home lab environment
+- Preparing for CompTIA Security+
+
+---
+
+## Career Goal
+To secure an entry-level role in cybersecurity, such as a SOC Analyst or Junior Cyber Security Analyst, and continue developing in the field of information security.
+
+---
+
+## Contact
+- LinkedIn: https://www.linkedin.com/in/william-de-paula-ferrari-a42302364/
+
+---
+
+## Notes
+This repository is continuously updated as I learn and build new projects.
+
+All content reflects my personal learning journey and practical experimentation in cybersecurity.

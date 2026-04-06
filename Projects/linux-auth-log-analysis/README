@@ -70,5 +70,109 @@ Opened the Linux terminal in the virtual machine.
 ### 2. View Authentication Logs
 Used the following command:
 
-```bash
 cat /var/log/auth.log
+
+### 3. Filter Failed Login Attempts
+Used grep to filter failed SSH logins:
+
+cat /var/log/auth.log | grep "Failed password"
+
+### 4. Review Relevant Entries
+Analyzed the following information:
+
+- Username attempted
+- Source IP address
+- Timestamp
+- Frequency of attempts
+
+#### 5. Identify Patterns
+Looked for:
+
+- repeated login attempts
+- same IP address
+- multiple usernames targeted
+
+### Sample Findings
+- Example Log Entry
+"Failed password for invalid user admin from 192.168.1.10 port 22 ssh2"
+
+Observations
+- Multiple failed login attempts were detected
+- The same IP address attempted access repeatedly
+- Different usernames were targeted
+- Attempts occurred within a short time frame
+
+### Event Interpretation
+What Does "Failed password" Mean?
+
+This log entry indicates that an SSH login attempt failed due to incorrect credentials.
+
+- Possible Causes
+- Incorrect password entered by user
+- Automated brute-force attack
+- Unauthorized access attempt
+
+### Basic Analysis
+
+Scenario A — Normal Activity
+- Few failed attempts
+- Known user
+- Local or trusted IP
+
+Scenario B — Suspicious Activity
+- Repeated failed attempts
+- Same IP address targeting multiple usernames
+- High frequency in a short period
+
+Analyst Conclusion
+The observed pattern of repeated failed login attempts from the same IP address may indicate a brute-force attack or unauthorized access attempt.
+
+### Why This Matters in Cybersecurity
+Monitoring authentication logs is a fundamental task in cybersecurity.
+
+This type of analysis helps:
+
+- detect brute-force attacks
+- identify unauthorized access attempts
+- support incident response
+- improve system security
+
+This is a core responsibility in Security Operations Center (SOC) environments.
+
+### Possible Improvements
+This project can be extended by:
+
+- counting failed attempts per IP address
+- identifying the most frequent attacking IP
+- comparing successful vs failed logins
+- implementing tools like fail2ban
+- creating scripts to automate detection
+
+### What I Learned
+- how to access and analyze Linux authentication logs
+- how to filter log data using grep
+- how to detect failed SSH login attempts
+- how to identify suspicious login patterns
+- how to document a basic cybersecurity investigation
+
+### Next Steps
+- automate detection of repeated login attempts
+- create alerts for suspicious activity
+- expand analysis with additional log sources
+
+### Screenshots
+auth-log.jpg
+failed-login.jpg
+
+### Repository Structure
+linux-auth-log-analysis/
+│
+├── README.md
+└── images/
+├── auth-log.jpg
+└── failed-logins.jpg
+
+### Final Notes
+This project demonstrates a foundational cybersecurity skill: analyzing authentication logs to detect potential threats.
+It reflects practical knowledge relevant for entry-level cybersecurity roles and contributes to building a strong technical portfolio.
+

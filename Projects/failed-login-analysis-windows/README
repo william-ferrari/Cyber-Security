@@ -1,0 +1,208 @@
+# Failed Login Analysis - Windows Event Viewer
+
+## Overview
+This project demonstrates a basic security investigation using Windows Event Viewer to identify failed login attempts on a Windows machine.
+
+The goal was to review Windows Security logs, locate failed authentication events, and determine whether the activity looked normal or potentially suspicious.
+
+This is an entry-level blue team / SOC-style exercise focused on log analysis and basic incident triage.
+
+---
+
+## Objective
+To investigate failed login attempts recorded in Windows Security logs and understand how authentication failures appear in Event Viewer.
+
+---
+
+## Skills Demonstrated
+- Windows Event Viewer navigation
+- Log filtering
+- Basic security event analysis
+- Authentication failure identification
+- Incident documentation
+- Blue team / SOC analyst mindset
+
+---
+
+## Tools Used
+- Windows 10 / Windows 11
+- Event Viewer
+- Windows Security Logs
+
+---
+
+## Background
+Failed login attempts are commonly recorded in Windows Security logs. These events can happen for legitimate reasons, such as a user entering the wrong password, but they can also indicate suspicious activity like brute-force attempts or unauthorized access attempts.
+
+One important Windows event related to failed logins is:
+
+- **Event ID 4625** — An account failed to log on
+
+This event can provide useful information such as:
+- Account name
+- Logon type
+- Source workstation
+- Failure reason
+- Process name
+- Network information (sometimes)
+
+---
+
+## Lab Setup
+This analysis was performed on a Windows machine using Event Viewer.
+
+### Environment
+- Operating System: Windows
+- Log Source: `Windows Logs > Security`
+- Event Investigated: **4625**
+
+---
+
+## Steps Performed
+
+### 1. Open Event Viewer
+I opened Event Viewer by searching for it in the Windows Start menu.
+
+### 2. Navigate to Security Logs
+I went to:
+
+`Event Viewer > Windows Logs > Security`
+
+### 3. Filter Failed Login Events
+I selected **Filter Current Log** and searched for:
+
+`4625`
+
+This filtered the Security log to display failed login attempts only.
+
+### 4. Review Event Details
+I opened one or more failed login events and reviewed the following fields:
+- Account Name
+- Logon Type
+- Failure Reason
+- Source Network Address
+- Workstation Name
+- Time Created
+
+### 5. Interpret the Findings
+I checked whether the failed logins appeared to be:
+- isolated user mistakes
+- repeated attempts against the same account
+- activity that could indicate suspicious behavior
+
+---
+
+## Sample Findings
+
+### Event ID
+- **4625**
+
+### Example Observations
+- Multiple failed login attempts were recorded in the Security log.
+- The event showed that the account failed to authenticate.
+- The failure reason indicated incorrect username or password.
+- The logon attempts happened within a short time window.
+- Some fields helped identify where the login attempt came from.
+
+### Key Fields Reviewed
+- **Account For Which Logon Failed**
+- **Failure Reason**
+- **Logon Type**
+- **Source Network Address**
+- **Workstation Name**
+
+---
+
+## Event Interpretation
+
+### What Event ID 4625 Means
+Event ID 4625 indicates that a login attempt was unsuccessful.
+
+This does **not automatically mean malicious activity**. It may happen because of:
+- mistyped password
+- wrong username
+- expired credentials
+- service account issue
+- scheduled task using old credentials
+
+However, repeated 4625 events can also suggest:
+- password spraying
+- brute-force attempts
+- unauthorized access attempts
+
+---
+
+## Basic Analysis
+
+### Was the activity normal or suspicious?
+In this lab, the failed logins could be interpreted in two different ways depending on frequency and context:
+
+#### Scenario A — Likely Normal
+If there is only one or two failed login attempts from a known user or local machine, this is likely normal user behavior.
+
+#### Scenario B — Potentially Suspicious
+If there are many repeated failed attempts in a short time, especially against the same account, that may indicate brute-force activity or password guessing.
+
+### Initial Analyst Conclusion
+Based on the reviewed logs, failed login events were successfully identified and analyzed.  
+The investigation showed how Windows records authentication failures and how these events can be used for early detection of suspicious login activity.
+
+---
+
+## Why This Matters in Cybersecurity
+Monitoring failed authentication attempts is a basic but important security task.
+
+A SOC analyst or junior cybersecurity analyst may use this type of log review to:
+- detect account abuse
+- identify brute-force attempts
+- validate suspicious login alerts
+- support incident response
+- escalate unusual authentication activity
+
+This project helps build practical experience in log analysis and security monitoring.
+
+---
+
+## Possible Improvements
+This project can be expanded by:
+- generating multiple failed logins intentionally and comparing timestamps
+- documenting different logon types
+- correlating Event ID 4625 with successful login events such as 4624
+- exporting logs for further analysis
+- creating a detection rule for repeated failed logins
+
+---
+
+## What I Learned
+From this project, I learned:
+- how to navigate Windows Security logs
+- how to filter events by Event ID
+- how to identify failed login attempts
+- how to interpret authentication-related log data
+- how an analyst documents basic security findings
+
+---
+
+## Next Steps
+My next step is to expand this investigation by:
+1. analyzing repeated failed logins over time
+2. comparing failed and successful login events
+3. performing similar analysis in Linux auth logs
+
+---
+
+## Screenshots
+Add screenshots here if available:
+- Event Viewer main screen
+- Filtered Event ID 4625 results
+- Event details panel
+
+Example:
+
+![Event Viewer Security Log](images/eventviewer-security-log.png)
+
+![Filtered Event 4625](images/event-4625.png)
+
+---
+
+## Repository Structure

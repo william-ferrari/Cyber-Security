@@ -1,0 +1,40 @@
+# Cyber Security Portfolio
+
+## Overview
+This repository documents my journey into cybersecurity, focusing on building practical skills aligned with real-world security operations.
+
+The goal of this portfolio is to demonstrate hands-on experience, continuous learning, and a strong foundation in cybersecurity concepts relevant to entry-level roles such as:
+
+- SOC Analyst (Level 1)
+- Junior Cyber Security Analyst
+- IT Support with Security Focus
+
+---
+
+## Objectives
+- Build a solid foundation in networking, systems, and cybersecurity
+- Develop practical, hands-on experience through labs and projects
+- Document investigations and security-related activities
+- Prepare for entry-level cybersecurity roles in the UK
+
+---
+
+## Skills Being Developed
+
+### Technical Skills
+- Networking fundamentals (TCP/IP, DNS, ports, protocols)
+- Windows & Linux systems
+- Log analysis (Event Viewer, Linux logs)
+- Basic incident investigation
+- Security monitoring concepts (SOC)
+- Authentication and access control
+- Threat detection fundamentals
+
+### Tools & Technologies
+- Windows Event Viewer
+- Linux (Ubuntu)
+- Command Line (Bash / CMD)
+- TryHackMe
+- Virtual Machines (VirtualBox / VMware)
+
+---
